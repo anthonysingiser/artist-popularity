@@ -18,7 +18,11 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {/*wrap children in SessionProvider and pass session as prop*/}
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <SessionProvider session={session}>
+          <main>
+            {children}
+          </main>
+        </SessionProvider>
       </body>
     </html>
   )
