@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import SessionProvider from './components/SessionProvider'
 import { getServerSession } from 'next-auth'
+import NavMenu from "./components/NavMenu"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +20,8 @@ export default async function RootLayout({ children }) {
       <body className={inter.className}>
         {/*wrap children in SessionProvider and pass session as prop*/}
         <SessionProvider session={session}>
-          <main>
+          <main className="mx-auto max-w-5xl text-2xl flex gap-2">
+            <NavMenu />
             {children}
           </main>
         </SessionProvider>
