@@ -26,10 +26,23 @@ function AuthButton() {
 }
 
 export default function NavMenu() {
+    const pathname = usePathname()
     return (
         <div>
             <AuthButton />
-
+            <hr className="my-4" />
+            <ul>
+                <Link href="/">
+                    <li className={pathname === "/" ? ACTIVE_ROUTE : INACTIVE_ROUTE}>
+                        Home
+                    </li>  
+                </Link>
+                <Link href="/protected">
+                    <li className={pathname === "/protected" ? ACTIVE_ROUTE : INACTIVE_ROUTE}>
+                        Protected
+                    </li>
+                </Link>
+            </ul>
         </div>
     )
 }
