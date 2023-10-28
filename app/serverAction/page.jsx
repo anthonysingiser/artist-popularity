@@ -6,4 +6,9 @@ export default async function ServerActionPage() {
         const session = await getServerSession()
         return session?.user?.name || "Not signed in"
     }
+    return (
+        <div>
+            <userName userAction={userName} />
+        </div>
+    )
 }
