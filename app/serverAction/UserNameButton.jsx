@@ -2,13 +2,13 @@
 
 import { useState } from "react"
 
-export default function UserNameButton({ userAction }) {
+export default function UserNameButton({ userNameAction }) {
     const [name, setName] = useState("")
     return (
         <div>
             <button
                 onClick={async () => {
-                    setName(await userAction())
+                    setName(await userNameAction())
                 }}
             >
                 What is my name?

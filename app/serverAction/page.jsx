@@ -1,4 +1,5 @@
 import { getServerSession } from "next-auth"
+import UserNameButton from "./UserNameButton"
 
 export default async function ServerActionPage() {
     const userName = async () => {
@@ -8,7 +9,7 @@ export default async function ServerActionPage() {
     }
     return (
         <div>
-            <userName userAction={userName} />
+            <UserNameButton userNameAction={userName} />
         </div>
     )
 }
